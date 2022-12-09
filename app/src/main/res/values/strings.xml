@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ArticlesTask</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_title">Kotlin News</string>
+    <string name="title">Title</string>
+    <string name="no_data">No Available Data \n Please Check Your Internet Connection</string>
+    <string name="try_again">Try Again</string>
+    <string name="no_body">There is no body for this article</string>
+    <array name="Image_extensions" >
+        <item>jpg</item>
+        <item>png</item>
+    </array>
+</resources>
