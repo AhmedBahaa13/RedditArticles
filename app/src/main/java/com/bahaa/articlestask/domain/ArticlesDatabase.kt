@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.bahaa.articlestask.domain.RedditResponse
 
-@Database(entities = [RedditResponse::class], version = 3)
+@Database(entities = [RedditResponse::class], version = 4)
 @TypeConverters(ArticleTypeConverter::class)
 abstract class ArticlesDatabase:RoomDatabase() {
    abstract val dao:ArticleDao

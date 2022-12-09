@@ -9,6 +9,7 @@ import com.bahaa.articlestask.MyApplication
 import com.bahaa.articlestask.data.Resource
 import com.bahaa.articlestask.domain.repository.ArticlesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -24,7 +25,7 @@ class ArticlesViewModel @Inject constructor(application: Application, private va
 
 
     fun getNews() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.fetchData(hasInternetConnection())
             _newFlow.value = repository.dataFlow.value
         }

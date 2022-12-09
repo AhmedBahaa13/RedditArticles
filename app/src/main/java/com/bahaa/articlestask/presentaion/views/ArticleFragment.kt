@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.bahaa.articlestask.R
 import com.bahaa.articlestask.data.models.Article
@@ -31,7 +32,7 @@ class ArticleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         article = requireArguments().getParcelable(Constants.ARTICLE) as Article?
-        activity?.actionBar?.title = article?.title
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = article?.title
         if (article?.body.isNullOrEmpty()) {
             binding.articleBody.visibility = View.GONE
             binding.noDataAvailable.visibility = View.VISIBLE
@@ -60,10 +61,13 @@ class ArticleFragment : Fragment() {
                         binding.imageView
                     )
                 binding.articleBody.text = article?.url
+                binding.articleBody.visibility = View.VISIBLE
+                binding.noDataAvailable.visibility = View.GONE
             }
 
             else -> {
                 (binding.imageView.parent as ViewGroup).removeView(binding.imageView)
+                binding.container.setPadding(0,10,0,0)
             }
         }
     }
