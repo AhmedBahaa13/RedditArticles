@@ -2,8 +2,8 @@
 RedditArticles is an app displaying reddit news 
 
 # The technology used
-Code Architecture (MVVM)
-Clean Architecture
+$$Code Architecture (MVVM)
+## Clean Architecture
 Dagger-hilt to handle dependency injection
 Coroutines to deal with threads
 Flow
